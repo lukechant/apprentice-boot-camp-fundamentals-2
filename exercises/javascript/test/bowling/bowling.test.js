@@ -14,4 +14,8 @@ describe('Bowling tests', () => {
     const rolls = [5, 5,  1, 0,  0, 0,  0, 0,  0, 0,  0, 0,  0, 0,  0, 0,  0, 0,  0, 0];
     expect(bowl(rolls)).toBe(12);
   });
+  test('given an array of scores including a strike, when total score is calculated, then result should be 14', () => {
+    const rolls = [10, 0,  1, 1,  0, 0,  0, 0,  0, 0,  0, 0,  0, 0,  0, 0,  0, 0,  0, 0];
+    expect(bowl(rolls)).toBe(14);
+  });
 });
