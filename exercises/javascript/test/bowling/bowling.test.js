@@ -18,4 +18,12 @@ describe('Bowling tests', () => {
     const rolls = [10,  1, 1,  0, 0,  0, 0,  0, 0,  0, 0,  0, 0,  0, 0,  0, 0,  0, 0];
     expect(bowl(rolls)).toBe(14);
   });
+  test('given an array of scores including a strike and spare, when total score is calculated, then result should be 32', () => {
+    const rolls = [10,  5, 5,  1, 0,  0, 0,  0, 0,  0, 0,  0, 0,  0, 0,  0, 0,  0, 0];
+    expect(bowl(rolls)).toBe(32);
+  });
+  test('given an array of scores including a strike and spares, when total score is calculated, then result should be 32', () => {
+    const rolls = [10,  5, 5,  1, 0,  0, 0,  7, 3,  0, 0,  0, 0,  0, 0,  0, 0,  0, 0];
+    expect(bowl(rolls)).toBe(42);
+  });
 });
