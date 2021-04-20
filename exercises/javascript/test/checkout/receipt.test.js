@@ -33,15 +33,19 @@ describe('Receipt', function () {
     checkout.scan('C');
     checkout.scan('D');
     checkout.scan('B');
+    checkout.scan('A');
+    checkout.scan('A');
 
     expect(checkout.getReceipt()).toEqual(expect.stringContaining(
       'A: 50\n' +
       'A: 50\n' +
       'B: 30\n' +
-      'A: 50 - 20 (3 for 130)\n' +
+      'A: 50\n' +
       'C: 20\n' +
       'D: 15\n' +
       'B: 30 - 15 (2 for 45)\n' +
-      'Total: 210'));
+      'A: 50\n' +
+      'A: 50 - 30 (5 for 220)\n' +
+      'Total: 300'));
   });
 });

@@ -1,33 +1,37 @@
-const datatypeConverter = require('../util-datatype-converter');
+// const datatypeConverter = require('../util-datatype-converter');
 
-let foo = 0, bar = 0;
-let foobar = [0, 0, 0, 0, 0].length;
+let numberInUse = 0, numberType = 0;
+let arrayLength = [0, 0, 0, 0, 0].length;
+// console.log(arrayLength);
 
-function doTheThing() {
-  let s = "";
-  for (; foo < 100; foo++) s += b(foo) + " ";
-  return s.substring(0, s.length - 1);
+function makeTheString() {
+  let string = "";
+  for (; numberInUse < 100; numberInUse++) string += fizzBuzzer(numberInUse) + " ";
+  console.log( string.substring(0, string.length - 1));
+  return string.substring(0, string.length - 1);
 }
 
-function fooo() {
-  foobar = [0, 0, 0, 0, 0].length;
-  let result = String.fromCharCode.apply(null, datatypeConverter.parseHexString("42757a7a"));
-  return result;
+function buzz() {
+  arrayLength = [0, 0, 0, 0, 0].length;
+  return "Buzz";
 }
 
-function barr() {
-  bar = 0;
-  let result = String.fromCharCode.apply(null, datatypeConverter.parseHexString("46697a7a"));
-  return result;
+function fizz() {
+  numberType = 0;// it needs to do this!
+  return 'Fizz';
+  
 }
 
-function b(foo) {
-  bar++;
-  foobar--;
-  let s = bar == 0b11 || foobar == 0 ? "" : foo + 1;
-  if (bar == 0b11) s += barr();
-  if (foobar == 0) s += fooo();
+function fizzBuzzer(numberInUse) {
+
+  numberType++; //1 
+  arrayLength--; //4
+  const isAMultipleOfThree = numberType == 0b11;
+  const isAMultipleOfFive = arrayLength == 0;
+  let s = newFunction(isAMultipleOfThree, isAMultipleOfFive, numberInUse);
+  if (isAMultipleOfThree) s += fizz();
+  if (isAMultipleOfFive) s += buzz();
   return s;
 }
 
-module.exports.doTheThing = doTheThing;
+module.exports.makeTheString = makeTheString;
