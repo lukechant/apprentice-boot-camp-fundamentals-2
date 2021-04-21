@@ -12,7 +12,7 @@ function makeTheString() {
 }
 
 function buzz() {
-  arrayLength = [0, 0, 0, 0, 0].length;
+  arrayLength = 5;
   return "Buzz";
 }
 
