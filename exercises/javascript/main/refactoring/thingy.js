@@ -1,8 +1,8 @@
 // const datatypeConverter = require('../util-datatype-converter');
 
 let numberInUse = 0, numberType = 0;
-let arrayLength = [0, 0, 0, 0, 0].length;
-// console.log(arrayLength);
+let arrayLength = 5;
+console.log(arrayLength);
 
 function makeTheString() {
   let string = "";
@@ -16,18 +16,16 @@ function buzz() {
   return "Buzz";
 }
 
-//TESTING TIMES
-
 function fizz() {
-  numberType = 0;// it needs to do this!
+  numberType = 0;
   return 'Fizz';
   
 }
 
 function fizzBuzzer(numberInUse) {
 
-  numberType++; //1 
-  arrayLength--; //4
+  numberType++;
+  arrayLength--;
   const isAMultipleOfThree = numberType == 0b11;
   const isAMultipleOfFive = arrayLength == 0;
   let s = isAMultipleOfThree || isAMultipleOfFive ? "" : numberInUse + 1;
