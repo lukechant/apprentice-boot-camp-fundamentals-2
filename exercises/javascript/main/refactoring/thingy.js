@@ -28,7 +28,7 @@ function fizzBuzzer(numberInUse) {
   arrayLength--; //4
   const isAMultipleOfThree = numberType == 0b11;
   const isAMultipleOfFive = arrayLength == 0;
-  let s = newFunction(isAMultipleOfThree, isAMultipleOfFive, numberInUse);
+  let s = isAMultipleOfThree || isAMultipleOfFive ? "" : numberInUse + 1;
   if (isAMultipleOfThree) s += fizz();
   if (isAMultipleOfFive) s += buzz();
   return s;
